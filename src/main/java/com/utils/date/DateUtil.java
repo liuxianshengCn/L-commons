@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -50,4 +51,38 @@ public final class DateUtil {
         return null;
     }
 
+    /**
+     * ${filed} 增加 ${inc}
+     * @param date
+     * @param inc
+     * @param field
+     * @return
+     */
+    public static Date add(Date date, int inc, int field){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+
+        calendar.add(field, inc);
+        return calendar.getTime();
+    }
+
+    /**
+     * 日期增加 ${inc}
+     * @param date
+     * @param inc
+     * @return
+     */
+    public static Date addDay(Date date, int inc) {
+        return add(date, inc, Calendar.DAY_OF_MONTH);
+    }
+
+    /**
+     * 月份增加 ${inc}
+     * @param date
+     * @param inc
+     * @return
+     */
+    public static Date addMonth(Date date, int inc) {
+        return add(date, inc, Calendar.MONTH);
+    }
 }

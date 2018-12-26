@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,14 +74,6 @@ public final class JSONUtil {
         }
 
         return object;
-    }
-
-    public static void main(String[] args) {
-        BigDecimal amount = new BigDecimal(10000);
-        Double pro = 30d / 100;
-        BigDecimal proa = new BigDecimal(pro.toString());
-        BigDecimal lockAmount = amount.multiply(proa).setScale(8, BigDecimal.ROUND_DOWN);
-        System.out.println(lockAmount);
     }
 
 }
